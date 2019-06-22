@@ -1,13 +1,19 @@
 <h1>タスク一覧画面です</h1>
 
+<%= form_tag("/task/create") do%>
+<p>新規タスク</p>
+<input type="text" name="task_name">
+<input type="submit"  value="作成">
+<% end %>
+
 <table>
   <tr>
     <td>ステータス</td>
     <td>タスク</td>
-   
-  </tr>
-  <tr>
+<% @tasks.each do |task|%>
+   <tr>
     <td>進行中</td>
-    <td>ううううああああああ</td>
+   <td><%= task.name %></td>
   </tr>
+<%end%>
 </table>
