@@ -1,20 +1,18 @@
 <h1>タスク管理アプリです</h1>
 <%= link_to("タスク一覧へ","/task/index") %>
 
-
-
 <%= form_tag("/home/create_status") do%>
 <p>新規ステータス</p>
 <input type="text" name="status_name">
-<input type="submit"  value="作成">
+<input type="submit" value="作成">
 <% end %>
 
 <table>
   <tr>
     <td>ステータス名</td>
-<% @statuses.each do |status|%>
-   <tr>
-   <td><%= status.name %></td>
+    <% @statuses.each do |status|%>
+  <tr>
+    <td><%= status.name %></td>
   </tr>
-<%end%>
+  <%end%>
 </table>

@@ -14,7 +14,7 @@
     <td>ステータス</td>
     <td>タスク</td>
 <% @tasks.each do |task|%>
-   <tr>
+     <tr>
     <td>
   <%status= Status.find_by(id:task.status_id)%>
   <%= task.status_id%>
