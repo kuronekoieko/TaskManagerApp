@@ -1,11 +1,13 @@
-<h1>タスク一覧画面です</h1>
+<h2>タスク一覧画面です</h2>
 
-<%= link_to("ホームに戻る","/home/top")%>
+<%= link_to("トップ画面へ","/task/top")%>
+<br>
+<%= link_to("設定画面へ","/task/setting") %>
 
 <%= form_tag("/task/create") do%>
 <p>新規タスク</p>
 <input type="text" name="task_name">
-<input type="submit"  value="作成">
+<input type="submit" value="作成">
 <% end %>
 <%= link_to("全削除","/task/reset",method:"post")%>
 
@@ -13,14 +15,14 @@
   <tr>
     <td>ステータス</td>
     <td>タスク</td>
-<% @tasks.each do |task|%>
-     <tr>
+    <% @tasks.each do |task|%>
+  <tr>
     <td>
-  <%status= Status.find_by(id:task.status_id)%>
-  <%= task.status_id%>
-  未着手
+      <%status= Status.find_by(id:task.status_id)%>
+      <%= task.status_id%>
+      未着手
     </td>
-   <td><%= task.name %></td>
+    <td><%= task.name %></td>
   </tr>
-<%end%>
+  <%end%>
 </table>

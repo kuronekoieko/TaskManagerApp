@@ -6,6 +6,12 @@ class TaskController < ApplicationController
     @statuses = Status.all
   end
 
+  def setting
+  end
+
+  def top
+  end
+
   def create
     @task = Task.new(name: params[:task_name], status_id: 1)
     @task.save
@@ -14,7 +20,7 @@ class TaskController < ApplicationController
     # @tasks.each do |task|
     # task.status_id=1
     # end
-    # @tasks.save
+    @tasks.save
 
     redirect_to("/task/index")
   end
